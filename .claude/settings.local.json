@@ -1,11 +1,12 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "mcp__ide__getDiagnostics"
+    ]
+  },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "executeautomation-playwright-server"
-  ],
-  "permissions": {
-    "allow": [
-      "Bash(mkdir:*)"
-    ]
-  }
+  ]
 }
