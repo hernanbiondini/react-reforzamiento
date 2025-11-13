@@ -4,7 +4,6 @@ const API_KEY = "K0JUcAfkbkEOdwkzoJJGvhgbEx7iQcKB";
 const API_URL = `https://api.giphy.com/v1/gifs/random?`;
 const URL = `${API_URL}&api_key=${API_KEY}`;
 
-const myRequest = fetch(URL);
 
 const createImageInsideDOM = (url: string) => {
   const imgElement = document.createElement("img");
@@ -12,12 +11,13 @@ const createImageInsideDOM = (url: string) => {
   document.body.appendChild(imgElement);
 };
 
-myRequest
-  .then((response) => response.json())
-  .then(({ data }: GiphyRandomResponse) => {
-    const imgUrl = data.images.original.url;
-    createImageInsideDOM(imgUrl);
-  })
-  .catch((error) => {
-    console.error("Error en la petición:", error);
-  });
+
+const getRandomGifUrl = async() => {  
+  const response = await fetch(URL);
+  const {data} : GiphyRandomResponse = await response.json();
+  return data.images.original.url;
+}
+
+
+//getRandomGifUrl().then((URL) => createImageInsideDOM(URL));
+getRandomGifUrl().then(createImageInsideDOM);
