@@ -32,3 +32,9 @@ const getherosByOwner = (owner: Owner): Hero[] => {
 
 console.log(getherosByOwner(Owner.DC));
 console.log(getherosByOwner(Owner.Marvel));
+
+const getHerosByname = (name:string): Hero[] => {
+  return heroes.filter(heroes => heroes.name.toLowerCase().includes(name.toLowerCase()));
+} 
+
+console.log(getHerosByname('batman'));
