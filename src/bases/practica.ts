@@ -1,5 +1,5 @@
 // Paso 1: Se ejecuta inmediatamente (código síncrono)
-console.log("0")
+console.log("Inicio del programa");
 
 // Paso 2: Se crea la promesa y se ejecuta su función constructora inmediatamente
 const myPromise = new Promise<number>((resolve, reject) => {
@@ -14,7 +14,7 @@ const myPromise = new Promise<number>((resolve, reject) => {
     // Paso 8: Se resuelve la promesa con el valor 100
     resolve(100)
     //reject('No tengo dinero')
-  }, 2000);
+  }, 10000);
 })
 
 // Paso 5: Continúa la ejecución síncrona (no espera al setTimeout)
@@ -36,4 +36,6 @@ myPromise
   });
 
 // Orden de ejecución en consola:
-// "0" → "1" → "a" → (espera 2 segundos) → "2" → "Tengo mi dinero 100" → "A seguir con mi vida"
+// ""Inicio del programa"" → "1" → "a" → "Fin del programa" →(espera 10 segundos) → "2" → "Tengo mi dinero 100" → "A seguir con mi vida"
+
+console.log('Fin del programa');

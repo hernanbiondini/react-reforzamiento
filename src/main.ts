@@ -7,9 +7,9 @@ import './style.css';
 //import './bases/07-tarea.ts';
 //import './bases/08-imp-exp.ts';
 //import './bases/09-promises.ts';
-//import './bases/10-fetch-api.ts';
+import './bases/10-fetch-api.ts';
 //import './bases/11-async-await.ts';
-import './bases/practica.ts'; 
+//import './bases/practica.ts'; 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
   <h1>Hola mundo</h1>
